@@ -1,66 +1,70 @@
+"use client";
+import { motion } from "framer-motion";
+import { ArrowRight, Terminal } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
+import Skills from "@/components/Skills";
+import Outline from "@/components/Outline";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className={styles.container}>
+      <section className={styles.hero}>
+        <div className={styles.heroGrid}>
+          {/* Left Side: Intro */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className={styles.heroLeft}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className={styles.badge}
+            >
+              <Terminal size={16} />
+              <span>Hi, I'm Venkatesh</span>
+            </motion.div>
+            
+            <h1 className={styles.title}>
+              AI Engineer & <br /><span className="text-gradient">Web Developer.</span>
+            </h1>
+            
+            <p className={styles.description}>
+              I bridge the gap between stunning web interfaces and powerful artificial intelligence. 
+              Designing the future, one pixel and parameter at a time.
+            </p>
+
+            <div className={styles.actions}>
+              <Link href="/projects" className={styles.primaryBtn}>
+                View Work <ArrowRight size={18} />
+              </Link>
+              <Link href="/contact" className={styles.secondaryBtn}>
+                Contact Me
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Right Side: Animated Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+            className={styles.heroRight}
           >
-            Documentation
-          </a>
+            <Outline />
+          </motion.div>
         </div>
-      </main>
+      </section>
+
+      {/* Skills Section */}
+      <Skills />
+
+      {/* Decorative background elements */}
+      <div className={styles.meshGradient} />
     </div>
   );
 }

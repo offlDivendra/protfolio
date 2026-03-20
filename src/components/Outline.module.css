@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.outlineSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.outlineSvg path {
+  fill: none;
+  stroke: white;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 6px white);
+}
