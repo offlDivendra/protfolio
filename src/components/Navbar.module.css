@@ -7,15 +7,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 2.5rem;
   z-index: 1000;
   transition: all 0.3s ease;
+  border-radius: 50px !important;
+  background: rgba(5, 5, 5, 0.85) !important;
 }
 
 .logo span {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.05em;
+  color: #ffffff; /* Make logo white too to match aesthetics */
 }
 
 .links {
@@ -26,12 +29,18 @@
 .link {
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: #dfc1a4; /* Warm tan/apricot color to match the inactive links in image */
   transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 .link:hover {
-  color: var(--foreground);
+  color: #ffffff;
+}
+
+.active {
+  color: #ffffff !important;
+  font-weight: 600;
 }
 
 @media (max-width: 600px) {

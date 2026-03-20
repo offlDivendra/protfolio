@@ -63,15 +63,23 @@
 }
 
 @keyframes pulse {
-  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
-  100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
 }
 
 .profileImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%; /* Shifts focus slightly down if top needs trimming */
+  object-position: center 20%;
+  /* Shifts focus slightly down if top needs trimming */
   border-radius: 0;
   position: relative;
   z-index: 1;
@@ -79,30 +87,87 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-color);
-  border-radius: 2rem;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  backdrop-filter: blur(10px);
+.nameTitle {
+  font-size: clamp(2rem, 5vw, 5.5rem);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
 }
 
-.title {
-  font-size: clamp(3rem, 6vw, 5rem);
-  line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: -0.04em;
+.greetingText {
+  color: #6b7280;
+}
+
+.typingCursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.1em;
+  background-color: #ffffff;
+  vertical-align: text-bottom;
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.nameAnimated {
+  background: linear-gradient(to right,
+      #a855f7 0%,
+      #ec4899 50%,
+      #a855f7 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: textShine 4s linear infinite;
+}
+
+@keyframes textShine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.subtitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  /* Made significantly smaller */
+  line-height: 1.2;
+  margin-top: 0.5rem;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+.subtitleLight {
+  color: #9ca3af;
+}
+
+.subtitleBold {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.descriptionWrapper {
+  border-left: 3px solid #3b82f6;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .description {
   font-size: clamp(1.1rem, 1.5vw, 1.25rem);
-  color: var(--text-muted);
-  max-width: 500px;
+  color: #9ca3af;
+  max-width: 550px;
   line-height: 1.6;
 }
 
@@ -166,10 +231,12 @@
     text-align: center;
     gap: 3rem;
   }
+
   .heroLeft {
     align-items: center;
     text-align: center;
   }
+
   .actions {
     justify-content: center;
     width: 100%;
@@ -181,10 +248,13 @@
     flex-direction: column;
     width: 100%;
   }
-  .primaryBtn, .secondaryBtn {
+
+  .primaryBtn,
+  .secondaryBtn {
     width: 100%;
     justify-content: center;
   }
+
   .imageWrapper {
     max-width: 300px;
   }

@@ -6,25 +6,67 @@ import styles from "./page.module.css";
 
 const projects = [
   {
-    title: "AI-Powered Analytics",
-    description: "A comprehensive dashboard that predicts user behavior using a custom PyTorch model deployed via FastAPI.",
-    tags: ["React", "PyTorch", "FastAPI", "PostgreSQL"],
-    github: "#",
-    live: "#"
+    title: "Netflix",
+    description: "A high-fidelity Netflix interface clone featuring a sleek, responsive dark-mode design with pixel-perfect red accents and complex interactive components.",
+    tags: ["Next.js", "React", "Tailwind CSS"],
+    github: "https://github.com/offlvenkatesh/NetflixUI",
+    live: "https://netflix-ui-1beg.vercel.app/"
   },
   {
-    title: "NeuroWeb CMS",
-    description: "A headless CMS designed for AI agents, allowing LLMs to directly read and write content through structured APIs.",
-    tags: ["Next.js", "TypeScript", "Node.js", "MongoDB"],
-    github: "#",
-    live: "#"
+    title: "Simply Recipes",
+    description: "A beautifully responsive recipe discovery platform featuring dynamic search, category filtering, and visually stunning culinary layouts.",
+    tags: ["HTML", "JavaScript", "CSS3"],
+    github: "https://github.com/offlvenkatesh/SimplyRecipes",
+    live: "https://simply-recipes-orcin.vercel.app/"
   },
   {
-    title: "Conversational Copilot",
-    description: "An elegant, interactive chat interface built for a proprietary RAG architecture, featuring real-time streaming.",
-    tags: ["React", "WebSockets", "Framer Motion"],
-    github: "#",
-    live: "#"
+    title: "Marvel UI",
+    description: "An immersive Marvel character and comic database explorer built with high-performance animations and deep API connectivity.",
+    tags: ["React", "API Integration", "Framer Motion"],
+    github: "https://github.com/offlvenkatesh/Marvel",
+    live: "https://marvel-ui.vercel.app/"
+  },
+  {
+    title: "Admin Dashboard",
+    description: "A sleek, responsive administrative dashboard featuring real-time data visualization, interactive charts, and a clean modern UI library.",
+    tags: ["React", "CSS3", "Recharts"],
+    github: "https://github.com/offlvenkatesh/Dashboard",
+    live: "https://dashboard-lake-two-47.vercel.app/"
+  },
+  {
+    title: "YouTube Clone",
+    description: "A pixel-perfect YouTube interface reconstruction supporting video grid layouts, responsive sidebars, and native-feeling category pills.",
+    tags: ["HTML5", "CSS3"],
+    github: "https://github.com/offlvenkatesh/youtube-ui-clone",
+    live: "https://youtube-ui-clone-mauve.vercel.app/"
+  },
+  {
+    title: "Eatery Cafe",
+    description: "A premium, appetizing landing page for a modern cafe, showcasing smooth scrolling, elegant typography, and a fully responsive menu section.",
+    tags: ["HTML5", "CSS3", "JavaScript"],
+    github: "https://github.com/offlvenkatesh/Eatery-Cafe-Restaurant-Website",
+    live: "https://youtube-ui-clone-cb9b.vercel.app/"
+  },
+  {
+    title: "Google Search Clone",
+    description: "A fully functional Google Search clone integrating real-time search queries and flawlessly mirroring the iconic minimalist search interface.",
+    tags: ["HTML5", "CSS3"],
+    github: "https://github.com/offlvenkatesh/Google-Clone",
+    live: "https://google-clone-alpha-liard.vercel.app/"
+  },
+  {
+    title: "Nike Limited ",
+    description: "A high-end eCommerce landing experience for Nike sneakers, heavily focused on dramatic product showcases, glassmorphism, and fluid motion design.",
+    tags: ["HTML5", "CSS3"],
+    github: "https://github.com/offlvenkatesh/Nike-Limited-UI",
+    live: "https://nike-limited-ui.vercel.app/"
+  },
+  {
+    title: "India Covid Tracker",
+    description: "A vital, real-time data tracking dashboard providing live statistics, interactive state-wise mapping, and historical charts for COVID-19 in India.",
+    tags: ["React", "Recharts"],
+    github: "https://github.com/offlvenkatesh/IndiaCovidTracker",
+    live: "https://india-covid-tracker-one.vercel.app/"
   }
 ];
 
@@ -62,7 +104,7 @@ function InteractiveCard({ project, index }: { project: any, index: number }) {
       <div className={styles.cardContent}>
         <h2 className={styles.cardTitle}>{project.title}</h2>
         <p className={styles.cardDescription}>{project.description}</p>
-        
+
         <div className={styles.tags}>
           {project.tags.map((tag: string) => (
             <span key={tag} className={styles.tag}>{tag}</span>
@@ -85,13 +127,13 @@ function InteractiveCard({ project, index }: { project: any, index: number }) {
 export default function Projects() {
   return (
     <div className={styles.container}>
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className={styles.header}
       >
-        <h1 className={styles.title}>Selected <span className="text-gradient">Projects</span></h1>
+        <h1 className={styles.title}>Selected <span className={styles.titleAccent}>Projects</span></h1>
         <p className={styles.subtitle}>A showcase of my recent engineering work.</p>
       </motion.div>
 

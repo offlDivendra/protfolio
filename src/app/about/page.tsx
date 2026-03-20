@@ -1,11 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
-import { Code, Brain, ChevronRight } from "lucide-react";
+import { Code, Brain, ChevronRight, Download, ExternalLink } from "lucide-react";
+import Skills from "@/components/Skills";
 import styles from "./page.module.css";
 
 export default function About() {
-  const skills = ["React", "Next.js", "TypeScript", "Python", "PyTorch", "TensorFlow", "Node.js", "GraphQL"];
-
   return (
     <div className={styles.container}>
       <motion.div 
@@ -18,6 +17,14 @@ export default function About() {
         <p className={styles.subtitle}>
           I'm a passionate engineer who loves blending cutting-edge AI models with beautiful, high-performance web applications.
         </p>
+        <div className={styles.resumeActions}>
+          <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.primaryBtn}>
+            <ExternalLink size={18} /> View CV
+          </a>
+          <a href="/Resume.pdf" download="Venkatesh_Resume.pdf" className={styles.secondaryBtn}>
+            <Download size={18} /> Download
+          </a>
+        </div>
       </motion.div>
 
       <div className={styles.bentoGrid}>
@@ -44,24 +51,9 @@ export default function About() {
           <h2>AI Engineering</h2>
           <p>Training and deploying machine learning models. From NLP to computer vision, I integrate intelligent features directly into web products.</p>
         </motion.div>
-
-        <motion.div 
-          className={`glass-panel ${styles.card} ${styles.skillsCard}`}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <h2>Tech Stack</h2>
-          <div className={styles.skillsList}>
-            {skills.map((skill, index) => (
-              <span key={index} className={styles.skillBadge}>
-                {skill}
-              </span>
-            ))}
-          </div>
-        </motion.div>
       </div>
+
+      <Skills />
     </div>
   );
 }

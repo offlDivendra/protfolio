@@ -27,6 +27,48 @@
   line-height: 1.6;
 }
 
+.resumeActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.primaryBtn, .secondaryBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.primaryBtn {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(255, 255, 255, 0.2);
+}
+
+.secondaryBtn {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--foreground);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.secondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+
 .bentoGrid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);

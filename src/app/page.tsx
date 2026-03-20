@@ -1,13 +1,42 @@
 "use client";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Terminal } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import Skills from "@/components/Skills";
 import Outline from "@/components/Outline";
 import styles from "./page.module.css";
 
 export default function Home() {
+  const roles = ["an AI Engineer.", "a Web Developer."];
+  const [roleText, setRoleText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const typingSpeed = 100;
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+    const currentRole = roles[loopNum % roles.length];
+
+    if (isDeleting) {
+      timer = setTimeout(() => {
+        setRoleText(currentRole.substring(0, roleText.length - 1));
+        if (roleText.length === 0) {
+          setIsDeleting(false);
+          setLoopNum(loopNum + 1);
+        }
+      }, typingSpeed / 2);
+    } else {
+      timer = setTimeout(() => {
+        setRoleText(currentRole.substring(0, roleText.length + 1));
+        if (roleText.length === currentRole.length) {
+          timer = setTimeout(() => setIsDeleting(true), 2000);
+        }
+      }, typingSpeed);
+    }
+    return () => clearTimeout(timer);
+  }, [roleText, isDeleting, loopNum]);
+
   return (
     <div className={styles.container}>
       <section className={styles.hero}>
@@ -19,24 +48,32 @@ export default function Home() {
             transition={{ duration: 1, ease: "easeOut" }}
             className={styles.heroLeft}
           >
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className={styles.badge}
             >
-              <Terminal size={16} />
-              <span>Hi, I'm Venkatesh</span>
+              <h1 className={styles.nameTitle}>
+                <span className={styles.greetingText}>Hi ! I'm </span>
+                <span className={styles.nameAnimated}>Venkatesh</span>
+              </h1>
             </motion.div>
-            
-            <h1 className={styles.title}>
-              AI Engineer & <br /><span className="text-gradient">Web Developer.</span>
-            </h1>
-            
-            <p className={styles.description}>
-              I bridge the gap between stunning web interfaces and powerful artificial intelligence. 
-              Designing the future, one pixel and parameter at a time.
-            </p>
+
+            <h2 className={styles.subtitle}>
+              <span className={styles.subtitleLight}>I am </span>
+              <span className={styles.subtitleBold}>
+                {roleText}
+                <span className={styles.typingCursor}></span>
+              </span>
+            </h2>
+
+            <div className={styles.descriptionWrapper}>
+              <p className={styles.description}>
+                I bridge the gap between stunning web interfaces and powerful artificial intelligence.
+                <br />
+                Designing the future, one pixel and parameter at a time.
+              </p>
+            </div>
 
             <div className={styles.actions}>
               <Link href="/projects" className={styles.primaryBtn}>
@@ -59,9 +96,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
-      {/* Skills Section */}
-      <Skills />
 
       {/* Decorative background elements */}
       <div className={styles.meshGradient} />
