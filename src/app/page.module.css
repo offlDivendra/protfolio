@@ -244,6 +244,11 @@
 }
 
 @media (max-width: 600px) {
+  .hero {
+    margin-top: 6rem;
+    padding: 0 1rem;
+  }
+
   .actions {
     flex-direction: column;
     width: 100%;

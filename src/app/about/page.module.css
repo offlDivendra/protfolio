@@ -34,7 +34,8 @@
   margin-top: 2rem;
 }
 
-.primaryBtn, .secondaryBtn {
+.primaryBtn,
+.secondaryBtn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -149,7 +150,24 @@
 }
 
 @media (max-width: 768px) {
-  .webDev, .aiEng, .skillsCard {
+  .container {
+    padding: 6rem 1rem 3rem;
+    gap: 3rem;
+  }
+
+  .webDev,
+  .aiEng,
+  .skillsCard {
     grid-column: span 12;
+  }
+
+  .resumeActions {
+    flex-direction: column;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+    justify-content: center;
   }
 }

@@ -6,8 +6,8 @@ import styles from "./page.module.css";
 
 export default function About() {
   return (
-    <div className={styles.container}>
-      <motion.div 
+    <main className={styles.container}>
+      <motion.header
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -25,10 +25,10 @@ export default function About() {
             <Download size={18} /> Download
           </a>
         </div>
-      </motion.div>
+      </motion.header>
 
-      <div className={styles.bentoGrid}>
-        <motion.div 
+      <section className={styles.bentoGrid}>
+        <motion.div
           className={`glass-panel ${styles.card} ${styles.webDev}`}
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -40,7 +40,7 @@ export default function About() {
           <p>Building pixel-perfect, responsive, and accessible user interfaces that provide exceptional user experiences. I specialize in the React ecosystem.</p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className={`glass-panel ${styles.card} ${styles.aiEng}`}
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -51,9 +51,9 @@ export default function About() {
           <h2>AI Engineering</h2>
           <p>Training and deploying machine learning models. From NLP to computer vision, I integrate intelligent features directly into web products.</p>
         </motion.div>
-      </div>
+      </section>
 
       <Skills />
-    </div>
+    </main>
   );
 }

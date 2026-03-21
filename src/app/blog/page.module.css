@@ -108,3 +108,18 @@
 .readMoreBtn:hover {
   opacity: 0.8;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 6rem 1rem 3rem;
+    gap: 2rem;
+  }
+
+  .title {
+    white-space: normal;
+  }
+
+  .postCard {
+    padding: 1.5rem;
+  }
+}

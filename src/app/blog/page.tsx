@@ -58,8 +58,8 @@ const posts = [
 
 export default function Blog() {
   return (
-    <div className={styles.container}>
-      <motion.div
+    <main className={styles.container}>
+      <motion.header
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -69,9 +69,9 @@ export default function Blog() {
         <p className={styles.subtitle}>
           Articles on AI and Technology.
         </p>
-      </motion.div>
+      </motion.header>
 
-      <div className={styles.postList}>
+      <section className={styles.postList}>
         {posts.map((post, index) => (
           <motion.article
             key={index}
@@ -94,7 +94,7 @@ export default function Blog() {
             </a>
           </motion.article>
         ))}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

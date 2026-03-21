@@ -14,8 +14,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Venkatesh | AI Engineer & Web Developer",
-  description: "A dark theme, modern portfolio showcasing AI engineering and web development projects by Venkatesh.",
+  metadataBase: new URL("https://your-portfolio-domain.com"), // Update this with the real domain later
+  title: {
+    default: "Venkatesh Portfolio | offlvenkatesh | AI & Web",
+    template: "%s | Venkatesh Portfolio (offlvenkatesh)",
+  },
+  description: "The official portfolio of Venkatesh (offlvenkatesh). I bridge the gap between stunning web interfaces and powerful artificial intelligence.",
+  keywords: ["venkatesh portfolio", "offlvenkatesh", "Venkatesh", "AI Engineer", "Web Developer", "React", "Next.js"],
+  authors: [{ name: "offlvenkatesh", url: "https://github.com/offlvenkatesh" }],
+  creator: "offlvenkatesh",
+  openGraph: {
+    title: "Venkatesh Portfolio | offlvenkatesh",
+    description: "The official portfolio of Venkatesh (offlvenkatesh). Bridging AI and web development.",
+    url: "https://your-portfolio-domain.com",
+    siteName: "Venkatesh Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Venkatesh Portfolio | offlvenkatesh",
+    description: "The official portfolio of Venkatesh (offlvenkatesh). Bridging AI and web development.",
+  },
 };
 
 export default function RootLayout({

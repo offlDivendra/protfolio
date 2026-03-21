@@ -38,7 +38,7 @@ export default function Home() {
   }, [roleText, isDeleting, loopNum]);
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <section className={styles.hero}>
         <div className={styles.heroGrid}>
           {/* Left Side: Intro */}
@@ -99,6 +99,6 @@ export default function Home() {
 
       {/* Decorative background elements */}
       <div className={styles.meshGradient} />
-    </div>
+    </main>
   );
 }
