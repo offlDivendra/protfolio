@@ -14,8 +14,8 @@ export default function Navbar() {
   return (
     <motion.nav 
       className={`glass-panel ${styles.navbar}`}
-      initial={{ y: -100, opacity: 0, x: '-50%' }}
-      animate={{ y: 0, opacity: 1, x: '-50%' }}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <div className={styles.logo}>
