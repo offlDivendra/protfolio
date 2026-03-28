@@ -31,12 +31,10 @@ def generate_svg_path(image_path, output_svg_path, size=400):
     contours, hierarchy = cv2.findContours(edges, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
     
     # To "add like in the left neck line make it look good":
-    # Maybe we can simply mirror the left side to the right side for the bottom part?
-    # The user says "add the line in the bottom right side of the image and also the right neck in the image is not good add like in the left neck line make it look good".
-    # A simple way to guarantee symmetry on the neck is to manually draw it or mirror the left part of the image for the bottom half!
-    # Let's mirror the left half of the edges to the right half ONLY for the neck/shoulder area (e.g., bottom 30%).
-    # To do this safely:
-    y_start_neck = int(new_h * 0.6)
+    # Let's mirror the ENTIRE left side of the edges to the right side.
+    # The user says "the image is not coommpleted in the right of the facce can you complete it as it is in the left side of the image face".
+    # By starting from y=0, we mirror the full face and shoulders!
+    y_start_neck = 0
     mid_x = new_w // 2
     for y in range(y_start_neck, new_h):
         for x in range(mid_x, new_w):
@@ -45,7 +43,7 @@ def generate_svg_path(image_path, output_svg_path, size=400):
             # Copy left to right to make it perfectly symmetric!
             edges[y, x] = edges[y, left_x]
             
-    # Now that we've mirrored the bottom part, it will look perfectly symmetric like the left neck line!
+    # Now that we've mirrored the entire part, it will look perfectly symmetric!
     # And mirroring inherently OVERWRITES the watermark on the right side if the watermark isn't mirrored!
     # The watermark is in the bottom right, which gets overwritten by the mirrored left side! 
     # This beautifully solves both the "make it good like the left neck line" AND the watermark!
