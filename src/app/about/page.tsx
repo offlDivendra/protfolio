@@ -13,7 +13,7 @@ export default function About() {
         transition={{ duration: 0.8 }}
         className={styles.header}
       >
-        <h1 className={styles.title}>About <span className="text-gradient">Me</span></h1>
+        <h1 className={styles.title}>About <span className={styles.titleAccent}>Me</span></h1>
         <p className={styles.subtitle}>
           I'm a passionate engineer who loves blending cutting-edge AI models with beautiful, high-performance web applications.
         </p>
