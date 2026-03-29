@@ -20,6 +20,13 @@ const posts = [
     url: "https://medium.com/gitconnected/how-to-use-chatgpt-to-automate-80-of-your-daily-tasks-ed42a7e59f7c"
   },
   {
+    title: "What is an MCP Server and Why It's Changing AI Forever",
+    excerpt: "An introduction to the Model Context Protocol (MCP), the universal standard for connecting AI models to the world, turning them into active agents.",
+    date: "Mar 29, 2026",
+    readTime: "4 min read",
+    url: "https://medium.com/design-bootcamp/what-is-an-mcp-server-and-why-its-changing-ai-forever-2b41faaa988d"
+  },
+  {
     title: "6 AI Skills That Will Make You Irreplaceable In Your Career",
     excerpt: "The generative AI revolution is here. Master these six crucial skills to future-proof your career in the tech industry.",
     date: "Dec 3, 2025",
