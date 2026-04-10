@@ -14,7 +14,7 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch("https://formsubmit.co/ajax/offlvenkatesh@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/divendrakm2005@gmail.com", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -76,7 +76,7 @@ export default function Contact() {
             </a>
             
             {/* 3. Email (Direct contact, using web compose link to prevent annoying local mail app popups) */}
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=offlvenkatesh@gmail.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Email (Gmail)">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=divendrakm2005@gmail.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Email (Gmail)">
               <Mail size={22} />
             </a>
             
