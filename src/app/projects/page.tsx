@@ -65,8 +65,8 @@ const projects = [
     title: "India Covid Tracker",
     description: "A vital, real-time data tracking dashboard providing live statistics, interactive state-wise mapping, and historical charts for COVID-19 in India.",
     tags: ["React", "Recharts"],
-    github: "https://github.com/offlvenkatesh/IndiaCovidTracker",
-    live: "https://india-covid-tracker-one.vercel.app/"
+    github: "https://github.com/offlDivendra/covid19-india-tracker",
+    live: "https://covid19-india-tracker.vercel.app/"
   }
 ];
 
