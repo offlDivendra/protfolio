@@ -20,7 +20,7 @@ export default function Navbar() {
     >
       <div className={styles.logo}>
         <Link href="/" onClick={() => setIsOpen(false)}>
-          <span className="text-gradient">Venkatesh.</span>
+          <span className="text-gradient">Divendra.</span>
         </Link>
       </div>
 

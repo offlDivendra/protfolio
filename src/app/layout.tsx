@@ -16,25 +16,25 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://your-portfolio-domain.com"), // Update this with the real domain later
   title: {
-    default: "Venkatesh Portfolio | offlvenkatesh | AI & Web",
-    template: "%s | Venkatesh Portfolio (offlvenkatesh)",
+    default: "Divendra Portfolio | offldivendra | AI & Web",
+    template: "%s | Divendra Portfolio (offldivendra)",
   },
-  description: "The official portfolio of Venkatesh (offlvenkatesh). I bridge the gap between stunning web interfaces and powerful artificial intelligence.",
-  keywords: ["venkatesh portfolio", "offlvenkatesh", "Venkatesh", "AI Engineer", "Web Developer", "React", "Next.js"],
-  authors: [{ name: "offlvenkatesh", url: "https://github.com/offlvenkatesh" }],
-  creator: "offlvenkatesh",
+  description: "The official portfolio of Divendra (offldivendra). I bridge the gap between stunning web interfaces and powerful artificial intelligence.",
+  keywords: ["divendra portfolio", "offldivendra", "Divendra", "AI Engineer", "Web Developer", "React", "Next.js"],
+  authors: [{ name: "offldivendra", url: "https://github.com/offlvenkatesh" }],
+  creator: "offldivendra",
   openGraph: {
-    title: "Venkatesh Portfolio | offlvenkatesh",
-    description: "The official portfolio of Venkatesh (offlvenkatesh). Bridging AI and web development.",
+    title: "Divendra Portfolio | offldivendra",
+    description: "The official portfolio of Divendra (offldivendra). Bridging AI and web development.",
     url: "https://your-portfolio-domain.com",
-    siteName: "Venkatesh Portfolio",
+    siteName: "Divendra Portfolio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Venkatesh Portfolio | offlvenkatesh",
-    description: "The official portfolio of Venkatesh (offlvenkatesh). Bridging AI and web development.",
+    title: "Divendra Portfolio | offldivendra",
+    description: "The official portfolio of Divendra (offldivendra). Bridging AI and web development.",
   },
 };
 

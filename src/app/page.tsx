@@ -55,7 +55,7 @@ export default function Home() {
             >
               <h1 className={styles.nameTitle}>
                 <span className={styles.greetingText}>Hi ! I'm </span>
-                <span className={styles.nameAnimated}>Venkatesh</span>
+                <span className={styles.nameAnimated}>Divendra</span>
               </h1>
             </motion.div>
 
