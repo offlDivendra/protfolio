@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, Instagram, Twitter, Github } from "lucide-react";
+import { Send, Mail, Github } from "lucide-react";
 import styles from "./page.module.css";
 
 export default function Contact() {
@@ -71,7 +71,7 @@ export default function Contact() {
             </a>
             
             {/* 2. GitHub (Crucial portfolio evidence for developers/AI engineers) */}
-            <a href="https://github.com/offlvenkatesh" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="GitHub">
+            <a href="https://github.com/offlDivendra" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="GitHub">
               <Github size={22} />
             </a>
             
@@ -81,18 +81,8 @@ export default function Contact() {
             </a>
             
             {/* 4. Medium (Thought leadership and articles) */}
-            <a href="https://medium.com/@offlvenkatesh" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Medium">
+            <a href="https://medium.com/@divendrakm2005" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Medium">
               <span style={{ fontSize: '1.3rem', fontWeight: 800 }}>M</span>
-            </a>
-            
-            {/* 5. X / Twitter (Tech community presence) */}
-            <a href="https://x.com/offlvenkatesh7" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="X (Twitter)">
-              <Twitter size={22} />
-            </a>
-            
-            {/* 6. Instagram (Personal touch, lowest recruiter priority) */}
-            <a href="https://www.instagram.com/offlvenkatesh" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Instagram">
-              <Instagram size={22} />
             </a>
           </div>
         </motion.div>
